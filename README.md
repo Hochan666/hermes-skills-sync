@@ -127,6 +127,17 @@ cd hermes-skills-sync
 dsh plugin --profile web add "$PWD"
 ```
 
+也可以直接下载 zip 压缩包后按同样的方式安装：
+
+```bash
+# 下载指定版本（当前最新：v1.3.0）
+curl -LO https://github.com/Hochan666/hermes-skills-sync/archive/refs/tags/v1.3.0.zip
+unzip v1.3.0.zip
+dsh plugin --profile web add "$PWD/hermes-skills-sync-1.3.0"
+```
+
+或在仓库页面点 **Code → Download ZIP**（默认取默认分支）。
+
 `dsh plugin` 会把剩余参数转发给 profile 目录下的包管理器，因此本地目录会被**链接**进
 profile（源码改动即时可见，不需要重新发布）。
 
