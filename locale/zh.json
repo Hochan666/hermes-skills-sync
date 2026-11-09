@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hermes 技能同步",
+    "description": "自动发现本机已安装的 Hermes 及其技能，可将选中的技能复制为 DSH 全局技能或导入至指定项目。"
+  }
+}

@@ -1,0 +1,6 @@
+# Hermes Skills Sync — discovers Hermes installations on this machine and
+# imports their skills into DSH (global or project scope).
+- insert:
+    - id: hermes-skills-sync
+      name: 'hermes-skills-sync'
+      config: {}

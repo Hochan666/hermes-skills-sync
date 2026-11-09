@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hermes Skills Sync">
+  <defs>
+    <linearGradient id="hss-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f7fd4"/>
+      <stop offset="1" stop-color="#7b5cd6"/>
+    </linearGradient>
+  </defs>
+  <!-- Two stacked source cards merging into one target card: the Hermes
+       skills flow into DSH. -->
+  <rect x="8" y="12" width="26" height="18" rx="4" fill="none" stroke="url(#hss-g)" stroke-width="3"/>
+  <rect x="8" y="34" width="26" height="18" rx="4" fill="none" stroke="url(#hss-g)" stroke-width="3"/>
+  <path d="M38 32h6" stroke="url(#hss-g)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M41 28l4 4-4 4" fill="none" stroke="url(#hss-g)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="46" y="23" width="12" height="18" rx="4" fill="url(#hss-g)"/>
+</svg>

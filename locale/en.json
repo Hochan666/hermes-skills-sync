@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hermes Skills Sync",
+    "description": "Discovers the Hermes installations and skills on this machine, and copies a selected skill into DSH as a global or project skill."
+  }
+}
