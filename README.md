@@ -1,5 +1,7 @@
 # hermes-skills-sync
 
+<img src="assets/icon-180.png" width="96" alt="hermes-skills-sync icon">
+
 > 把本机 Hermes 已安装的技能，一键搬进 DeepSeek Harness。
 > Bring the skills Hermes installed on this machine into DeepSeek Harness.
 
