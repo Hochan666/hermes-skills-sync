@@ -1,0 +1,53 @@
+name: Release
+
+# Packs the bundle and publishes it as a release asset, so the plugin can be
+# installed from a prebuilt tarball instead of being built from source.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Pack
+        run: |
+          mkdir -p dist
+          npm pack --pack-destination dist
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          tag="${GITHUB_REF_NAME}"
+          version="${tag#v}"
+          name="${GITHUB_REPOSITORY#*/}"
+          asset="dist/${name}-${version}.tgz"
+          gh release create "$tag" "$asset" \
+            --title "$tag" \
+            --generate-notes \
+            --repo "$GITHUB_REPOSITORY"
+
+      - name: Tag the repository
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/topics" --input - <<'JSON'
+          { "names": ["dsh-plugin", "dsh", "deepseek-harness", "cordis", "plugin"] }
+          JSON
